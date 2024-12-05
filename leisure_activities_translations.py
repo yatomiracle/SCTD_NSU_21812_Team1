@@ -1,8 +1,6 @@
 from string import punctuation
 from moviepy.editor import (VideoFileClip, TextClip,
                             CompositeVideoClip, concatenate_videoclips)
-import threading
-import sys
 import pymorphy2
 
 morph = pymorphy2.MorphAnalyzer()
