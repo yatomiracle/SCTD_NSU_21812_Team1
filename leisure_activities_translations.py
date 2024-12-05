@@ -23,7 +23,7 @@ def create_video(text):
     for word in words:
       p = morph.parse(word)[0]
       if p.normal_form in theme_words:
-        video = VideoFileClip('/content/drive/MyDrive/Жесты_ПиРСКС/Слова/'+p.normal_form+'.avi')
+        video = VideoFileClip('Gestures/Words'+p.normal_form+'.avi')
         total_dur += video.duration
         txt_clip = (TextClip(word, fontsize=45, color='white')
                                 .set_position('center')
@@ -33,7 +33,7 @@ def create_video(text):
         for i in word:
             print(i)
             if i in alphabet:
-                video = VideoFileClip('/content/drive/MyDrive/Жесты_ПиРСКС/Алфавит/'+i+'.avi')
+                video = VideoFileClip('Gestures/Alphabet'+i+'.avi')
                 total_dur += video.duration
                 txt_clip = (TextClip(i.upper(), font='Montserrat', fontsize=70, color='white')
                                 .set_position('center')
