@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создание видео</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Перевести на жестовый язык</h1>
+        <form method="post" class="form">
+            <textarea name="text" rows="4" cols="50" placeholder="Введите предложение"></textarea>
+            <br>
+            <button type="submit">Создать видео</button>
+        </form>
+        <div class="output">
+            {% if video_path %}
+                <video width="600" controls>
+                    <source src="{{ video_path }}" type="video/mp4">
+                </video>
+                <p><span class="highlight">{{ text }}</span></p>
+            {% elif error %}
+                <p class="error">{{ error }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
